@@ -11,13 +11,13 @@
         ?>
         <form action="#" method="GET">
             <label for="aluno">Nome do aluno:
-                <input type="text" id="aluno" name="aluno">
+                <input type="text" id="aluno" name="aluno" required>
             </label><br><br>
             <label for="nota1">Nota 1:
-                <input type="text" id="nota1" name="nota1">
+                <input type="text" id="nota1" name="nota1" required>
             </label>
             <label for="nota2">Nota 2: 
-                <input type="text" id="nota2" name="nota2">
+                <input type="text" id="nota2" name="nota2" required>
             </label><br><br>
             <input type="submit" value="Verificar Situação">
         </form>

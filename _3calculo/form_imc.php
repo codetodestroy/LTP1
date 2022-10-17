@@ -11,10 +11,10 @@
         ?>
         <form action="#" method="GET">
             <label for="peso">Peso:
-                <input type="text" id="peso" name="peso">
+                <input type="text" id="peso" name="peso" required>
             </label>
             <label for="altura">Altura:
-                <input type="text" id="altura" name="altura">
+                <input type="text" id="altura" name="altura" required>
             </label><br><br>
             <input type="submit" value="Calcular">
         </form> 
