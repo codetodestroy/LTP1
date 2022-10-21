@@ -5,8 +5,31 @@
         <title>Formulário</title>
     </head>
     <body>
+        <?php
+        if(isset($_POST['bt-enviar'])) {
+            
+            $erros = array();
+
+            $nome = $_POST['nome'];
+            $sexo = $_POST['sexo'];
+            $dataNasc = $_POST['dataNascimento'];
+            $tel = $_POST['telefone'];
+            $email = $_POST['endemail'];
+
+            if(!$email == filter_input(INPUT_POST, 'endemail', FILTER_VALIDATE_EMAIL)) {
+                $erros[] = "E-mail não está válido!";
+            }
+
+            if(!empty($erros)) {
+                foreach ($erros as $erro) {
+                    echo $erro;
+                }
+            } 
+
+        } else {
+        ?>
         <h1>Formulário</h1>
-        <form action="enviar.php" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
             <label for="nome">Nome:
                 <input type="text" name="nome" id="nome" required>
             </label><br><br>
@@ -22,7 +45,10 @@
             <label for="endemail">E-mail: 
                 <input type="email" name="endemail" id="endemail" placeholder="seuemail@dominio.com" required>
             </label><br><br>
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" name="bt-enviar">
         </form>
+        <?php
+        }
+        ?>
     </body>
 </html>
